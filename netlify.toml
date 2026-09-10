@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22.13.0"
+
+# Preserve extensionless App Router paths such as /about and /mistoria.
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true

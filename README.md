@@ -43,6 +43,17 @@ npm run build
 
 独自ドメインはVercelのProject Settings → Domainsから設定してください。
 
+## Netlifyへデプロイする
+
+GitHubリポジトリをNetlifyへ接続してください。リポジトリ直下の `netlify.toml` が次の設定を自動適用します。
+
+- Base directory: 空欄（リポジトリのルート）
+- Build command: `npm run build`
+- Publish directory: `dist/client`
+- Node.js: `22.13.0`
+
+このプロジェクトはNext.js App Router互換のVinextで静的exportしているため、通常のNext.jsプロジェクトで使われる `.next` は公開先に指定しません。Netlifyの画面に以前のPublish directoryが残っている場合は、`dist/client`へ変更するか、リポジトリの設定を優先するようにしてください。
+
 ## SNSリンクを変更する
 
 すべてのSNS・配信サービスのURLは [`data/links.ts`](./data/links.ts) にまとめています。
